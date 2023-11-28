@@ -71,10 +71,12 @@ public class AppUser implements UserDetails {
     }
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 

@@ -23,9 +23,9 @@ public class AppUserService implements UserDetailsService {
     }
 
     public String signUpUser(AppUser appUser) {
-        boolean userExist = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
+        boolean userExists = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
 
-        if (userExist) {
+        if (userExists) {
             throw new IllegalStateException("Email already taken");
         }
 
@@ -33,10 +33,9 @@ public class AppUserService implements UserDetailsService {
 
         appUser.setPassword(encodedPassword);
 
-        // TODO: SEND Confirmation token
-
         appUserRepository.save(appUser);
 
-        return "it works";
+        // TODO: Send confirmation token
+        return  "it works";
     }
 }

@@ -70,16 +70,6 @@ public class AppUser implements UserDetails {
         return email;
     }
 
-    public String getFirstName() {
-
-        return firstName;
-    }
-
-    public String getLastName() {
-
-        return lastName;
-    }
-
     @Override
     public boolean isAccountNonExpired() {
 
@@ -89,7 +79,7 @@ public class AppUser implements UserDetails {
     @Override
     public boolean isAccountNonLocked() {
 
-        return !locked;
+        return false;
     }
 
     @Override
@@ -101,6 +91,6 @@ public class AppUser implements UserDetails {
     @Override
     public boolean isEnabled() {
 
-        return enabled;
+        return false;
     }
 }
